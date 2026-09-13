@@ -43,7 +43,7 @@ jobs:
           pip install --upgrade cython==0.29.36 buildozer
 
       - name: Build with Buildozer
-        run: buildozer -v android release
+        run: buildozer -v --debug android release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
