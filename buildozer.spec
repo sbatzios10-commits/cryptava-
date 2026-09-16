@@ -1,4 +1,5 @@
 [app]
+log_level = 2
 title = Cryptava
 package.name = cryptava
 package.domain = org.cryptava
