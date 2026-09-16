@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: false
+          path: cryptava
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,6 +30,7 @@ jobs:
           pip install --upgrade cython==0.29.36 buildozer
 
       - name: Build with Buildozer
+        working-directory: cryptava
         run: |
           buildozer -v android debug
 
@@ -36,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: bin/*.apk
+          path: cryptava/bin/*.apk
