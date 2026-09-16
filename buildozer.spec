@@ -19,8 +19,4 @@ android.sdk = 33
 android.ndk = 25b
 android.accept_sdk_license = True
 
-# (bool) Skip python-for-android download (use local version)
-skip_update = False
-skip_update = False
-
 skip_update = False
