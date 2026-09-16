@@ -20,3 +20,5 @@ android.ndk = 25b
 android.accept_sdk_license = True
 
 skip_update = False
+# Explicitly set python-for-android branch to avoid pip upgrade errors
+p4a.branch = release
