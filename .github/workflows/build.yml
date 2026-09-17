@@ -28,10 +28,9 @@ jobs:
           pip install --upgrade pip
           pip install --upgrade cython==0.29.36 buildozer
 
-     - name: Build with Buildozer
-    run: |
-      rm -f requirements.txt
-      buildozer -v android debug
+      - name: Build with Buildozer
+        run: |
+          buildozer -v android debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
