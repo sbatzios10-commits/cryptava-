@@ -30,6 +30,7 @@ jobs:
 
       - name: Build with Buildozer
         run: |
+          touch requirements.txt
           buildozer -v android debug
 
       - name: Upload APK Artifact
