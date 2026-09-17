@@ -14,7 +14,7 @@ android.permissions = INTERNET
 
 # Android specific settings to handle SDK and licenses automatically
 android.api = 33
-android.min_api = 21
+android.min_api = 33
 android.sdk = 33
 android.ndk = 25b
 android.accept_sdk_license = True
