@@ -21,3 +21,8 @@ android.accept_sdk_license = True
 
 skip_update = True
 # Explicitly set python-for-android branch to avoid pip upgrade errors
+# Target only 64-bit to avoid multi-arch compilation errors
+android.archs = arm64-v8a
+
+# Explicitly define requirements and bootstrap
+requirements = kivy, python3
