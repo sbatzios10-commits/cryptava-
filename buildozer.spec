@@ -25,6 +25,6 @@ skip_update = True
 android.archs = arm64-v8a
 
 # Explicitly define requirements and bootstrap
-requirements = python3,kivy
+requirements = hostpython3,python3,kivy
 
 # Force rebuild trigger
