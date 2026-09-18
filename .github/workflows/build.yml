@@ -28,6 +28,11 @@ jobs:
           python -m pip install --upgrade "pip<24.0"
           pip install --upgrade cython==0.29.36 buildozer
 
+      - name: Force remove any requirements file to unblock pip
+        run: |
+          rm -f requirements.txt
+          find . -name "requirements.txt" -delete
+
       - name: Build with Buildozer
         run: |
           buildozer -v android debug
