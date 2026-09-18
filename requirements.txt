@@ -1,2 +1,1 @@
-# No external packages required
 kivy
