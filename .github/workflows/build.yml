@@ -33,6 +33,10 @@ jobs:
           find . -name "requirements.txt" -type f -delete
           find ~/.buildozer -name "requirements.txt" -type f -delete || true
 
+      - name: Create valid dummy requirement
+        run: |
+          echo "kivy" > requirements.txt
+
       - name: Build with Buildozer
         run: |
           buildozer -v android debug
