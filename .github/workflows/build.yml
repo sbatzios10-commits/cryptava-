@@ -33,6 +33,10 @@ jobs:
           rm -f requirements.txt
           find . -name "requirements.txt" -delete
 
+      - name: Create dummy requirements to satisfy pip
+        run: |
+          touch requirements.txt
+
       - name: Build with Buildozer
         run: |
           buildozer -v android debug
