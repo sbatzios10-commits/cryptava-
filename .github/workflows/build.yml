@@ -37,6 +37,19 @@ jobs:
         run: |
           echo "kivy" > requirements.txt
 
+      - name: Start pip downgrade watcher for internal venv
+        run: |
+          while true; do
+            VENV_PIP=$(find .buildozer -path "*/venv/bin/pip" -type f 2>/dev/null | head -n 1)
+            if [ -n "$VENV_PIP" ]; then
+              PYTHON_BIN=$(dirname "$VENV_PIP")/python
+              "$PYTHON_BIN" -m pip install --upgrade "pip<24.0" || true
+              echo "Internal venv pip downgraded successfully!"
+              break
+            fi
+            sleep 2
+          done &
+
       - name: Build with Buildozer
         run: |
           buildozer -v android debug
