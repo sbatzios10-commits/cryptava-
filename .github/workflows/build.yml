@@ -28,14 +28,10 @@ jobs:
           python -m pip install --upgrade "pip<24.0"
           pip install --upgrade cython==0.29.36 buildozer
 
-      - name: Force remove any requirements file to unblock pip
+      - name: Nuke all requirements.txt files globally
         run: |
-          rm -f requirements.txt
-          find . -name "requirements.txt" -delete
-
-      - name: Create dummy requirements to satisfy pip
-        run: |
-          touch requirements.txt
+          find . -name "requirements.txt" -type f -delete
+          find ~/.buildozer -name "requirements.txt" -type f -delete || true
 
       - name: Build with Buildozer
         run: |
